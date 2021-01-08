@@ -19,11 +19,14 @@ function translatedURL (Text){
     // return finalURL
     
     fetch(finalURL)
-    .then((response=>{
-       var res= response.json;
-       let translatedTxt = res.contents.translated
-       outputDiv.innerHTML = translatedTxt 
-    }))
+    .then(response=>response.json())
+    .then(json=>{
+        console.log(json)
+        console.log(json.contents.translated)
+        let translatedTxt = json.contents.translated
+        
+        outputDiv.innerHTML = translatedTxt
+    })
 
     .catch((error)=>{
         console.log("BAD BAD", error);
@@ -31,19 +34,6 @@ function translatedURL (Text){
     })
   
 }
-
-// fetch(finalURL)
-// .then(something=>something.json())
-// .then(json=>{
-//     console.log(json)
-//     console.log(json.contents.translated)
-//     let translatedTxt = json.contents.translated
-    
-//     outputDiv.innerHTML = translatedTxt
-// })
-// .catch((error)=>{
-//     console.log("BAD BAD", error);
-// })
 
 
 // function errorHandler(error){
