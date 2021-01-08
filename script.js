@@ -22,6 +22,10 @@ function translatedURL (Text){
     .then(response=>response.json())
     .then(json=>{
         console.log(json)
+        console.log(json.contents.translated)
+        let translatedTxt = json.contents.translated
+        
+        outputDiv.innerHTML = translatedTxt
     })
    
 }
