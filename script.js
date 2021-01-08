@@ -16,7 +16,6 @@ const serverURl = "https://api.funtranslations.com/translate/minion.json"
 
 function translatedURL (Text){
     finalURL = serverURl + "?text=" + Text;
-    // return finalURL
     
     fetch(finalURL)
     .then(response=>response.json())
@@ -27,7 +26,6 @@ function translatedURL (Text){
         
         outputDiv.innerHTML = translatedTxt
     })
-
     .catch((error)=>{
         console.log("BAD BAD", error);
         alert("something wrong with server!try again after some time")
@@ -35,6 +33,15 @@ function translatedURL (Text){
   
 }
 
+
+// .then(response=>response.json())
+//     .then(json=>{
+//         console.log(json)
+//         console.log(json.contents.translated)
+//         let translatedTxt = json.contents.translated
+        
+//         outputDiv.innerHTML = translatedTxt
+//     })
 
 // function errorHandler(error){
 //     console.log("error occured",error);
