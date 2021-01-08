@@ -19,14 +19,38 @@ function translatedURL (Text){
     // return finalURL
     
     fetch(finalURL)
-    .then(response=>response.json())
-    .then(json=>{
-        console.log(json)
-        console.log(json.contents.translated)
-        let translatedTxt = json.contents.translated
-        
-        outputDiv.innerHTML = translatedTxt
+    .then((response=>{
+       var res= response.json;
+       let translatedTxt = res.contents.translated
+       outputDiv.innerHTML = translatedTxt 
+    }))
+
+    .catch((error)=>{
+        console.log("BAD BAD", error);
+        alert("something wrong with server!try again after some time")
     })
-   
+  
 }
 
+// fetch(finalURL)
+// .then(something=>something.json())
+// .then(json=>{
+//     console.log(json)
+//     console.log(json.contents.translated)
+//     let translatedTxt = json.contents.translated
+    
+//     outputDiv.innerHTML = translatedTxt
+// })
+// .catch((error)=>{
+//     console.log("BAD BAD", error);
+// })
+
+
+// function errorHandler(error){
+//     console.log("error occured",error);
+//     alert("something wrong with server!try again after some time")
+// }
+
+// .catch((error)=>{
+//     console.log(error,"yeahhh")
+// });
