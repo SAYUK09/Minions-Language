@@ -24,7 +24,8 @@ function translatedURL (Text){
         console.log(json.contents.translated)
         let translatedTxt = json.contents.translated
         
-        outputDiv.innerHTML = translatedTxt
+        outputDiv.innerText = translatedTxt
+    
     })
     .catch((error)=>{
         console.log("BAD BAD", error);

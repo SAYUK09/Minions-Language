@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -17,7 +19,8 @@ nav{
     background-color: #FCD34D;
     padding: 20px;
     font-size: larger;
-    font-family: "Hanalei Fill", cursive;
+    font-family: 'Permanent Marker', cursive;
+
 }
 
 .mainDiv{
@@ -29,22 +32,28 @@ nav{
 
 #txtInput{
     background: rgb(0,0,0);
-background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.14936396922050066) 0%);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.14936396922050066) 0%);
     border: 2px solid black;
     width: 40%;
     height: 20vh;
     margin: 10px;
-    color: black;
+    color: white;
     text-align: center;
     font-size: 2rem;
     overflow: hidden;
     box-shadow:4px 4px 9px black;
 }
 
+::placeholder {         
+    color: white;   /* Chrome, Firefox, Opera, Safari 10.1+ */
+    opacity: 1;       /* Firefox */
+}
+
 button{
     padding:15px ;
     margin: 10px;
     background-color: #FCD34D;
+    font-size: larger;
     border: none;
     border-radius: 10px;
     box-shadow:4px 4px 9px black;
@@ -58,11 +67,13 @@ button{
     width: 40%;
     height: 20vh;
     margin: 10px;
-    color: black;
+    color: white;
     text-align: center;
     font-size: 2rem;
     overflow: hidden;
     box-shadow:4px 4px 9px black;
+    font-size: larger;
+    font-family:cursive;
 }
 
 footer{
