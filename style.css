@@ -6,8 +6,8 @@
 }
 
 body{
-    background:url(https://i.pinimg.com/originals/00/05/2b/00052b33a4dd252fde78719aadb8e88a.gif) no-repeat center;
-    background-size: cover;
+    /* background:url(https://i.pinimg.com/originals/00/05/2b/00052b33a4dd252fde78719aadb8e88a.gif) no-repeat center;
+    background-size: cover; */
 }
 
 nav{
@@ -24,10 +24,12 @@ nav{
 }
 
 .mainDiv{
-    height: 76.5vh;
+    height: 75.5vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background:url(https://data.whicdn.com/images/68023527/original.gif) no-repeat center;
+    background-size: cover;
 }
 
 #txtInput{
