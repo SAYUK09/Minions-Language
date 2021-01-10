@@ -1,46 +1,40 @@
 const txtInput = document.querySelector("#txtInput");
-// console.log(txtInput)
 const btn = document.querySelector(".translateBtn")
-// console.log(btn)
 const outputDiv = document.querySelector(".outputDiv")
-// console.log(outputDiv)
-
-btn.addEventListener('click',()=>{
-    let inputText = txtInput.value;
-    console.log(inputText)
-    translatedURL (inputText)
-    
-})
 
 const serverURl = "https://api.funtranslations.com/translate/minion.json"
 
-function translatedURL (Text){
-    finalURL = serverURl + "?text=" + Text;
-    
-    fetch(finalURL)
-    .then(response=>response.json())
-    .then(json=>{
-        console.log(json)
-        console.log(json.contents.translated)
-        let translatedTxt = json.contents.translated
-        
+async function translatedURL(text) {
+    const finalURL = `${serverURl}?text=${text}`;
+    try {
+        const response = await fetch(finalURL)
+        const data = await response.json()
+
+        console.log(data)
+        console.log(data.contents.translated)
+
+        let translatedTxt = data.contents.translated
         outputDiv.innerText = translatedTxt
-    
-    })
-    .catch((error)=>{
+
+    } catch (error) {
         console.log("BAD BAD", error);
         alert("something wrong with server!try again after some time")
-    })
-  
+    }
 }
 
 
+btn.addEventListener('click', () => {
+    let inputText = txtInput.value;
+    if (inputText)                  // if the inputText is not Empty then, make a request
+        translatedURL(inputText)
+})
+
+// fetch(finalURL)
 // .then(response=>response.json())
 //     .then(json=>{
 //         console.log(json)
 //         console.log(json.contents.translated)
 //         let translatedTxt = json.contents.translated
-        
 //         outputDiv.innerHTML = translatedTxt
 //     })
 
