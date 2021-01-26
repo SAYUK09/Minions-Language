@@ -49,6 +49,4 @@ function translatedURL (Text){
 //     alert("something wrong with server!try again after some time")
 // }
 
-// .catch((error)=>{
-//     console.log(error,"yeahhh")
-// });
+
